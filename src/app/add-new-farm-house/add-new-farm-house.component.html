@@ -1,0 +1,200 @@
+<div class="container p-3">
+  <div class="first p-3">
+    <h1>farm House</h1>
+    <h3 class="card-subtitle">Edit/Add Farm House</h3>
+    <div class="container second">
+      <form
+        #productForm="ngForm"
+        (ngSubmit)="onProductCreate(productForm.value)"
+      >
+        <div class="row">
+          <div class="col-25">
+            <label form for="fname"> Name</label>
+          </div>
+          <div class="col-75">
+            <input
+              type="text"
+              id="fname"
+              name="name"
+              placeholder="Farm house"
+              ngModel
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">Photo(s)</div>
+          <div class="col-75">
+            <div class="col-95">
+              <div class="custom-file col-75 photoUpload">
+                <input
+                  formControlName="images"
+                  ngModel
+                  name="images"
+                  type="file"
+                  id="inputGroupFile01"
+                  aria-describedby="inputGroupFileAddon01"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row">
+          <div class="col-25">
+            <label for="fname"> UserName</label>
+          </div>
+          <div class="col-75">
+            <input
+              formControlName="UserName"
+              type="text"
+              id="fname"
+              name="user"
+              placeholder="UserName"
+            />
+          </div>
+        </div> -->
+        <!-- <div class="row">
+          <div class="col-25">
+            <label for="fname">Password</label>
+          </div>
+          <div class="col-75">
+            <input
+              name="password"
+              formControlName="Password"
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="******"
+            />
+          </div>
+        </div> -->
+        <div class="row">
+          <div class="col-25">
+            <label for="fname"> No. of Persons Occupy :</label>
+          </div>
+          <div class="col-75">
+            <input
+              ngModel
+              class="form-control"
+              type="number"
+              id="fname"
+              name="NoOfPersonsOccupy"
+              placeholder="10"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">Address/Location :</label>
+          </div>
+          <div class="col-75">
+            <input
+              ngModel
+              type="text"
+              id="fname"
+              name="address"
+              placeholder="Farm house"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname"> Phone :</label>
+          </div>
+          <div class="col-75">
+            <input
+              ngModel
+              name="ownerPhone"
+              type="text"
+              id="fname"
+              placeholder="Farm house"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">Owner Email :</label>
+          </div>
+          <div class="col-75">
+            <input
+              ngModel
+              name="ownerEmail"
+              type="email"
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="farmOwner@gmail.com"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname"> Rate Per Day :</label>
+          </div>
+          <div class="col-75">
+            <input
+              ngModel
+              name="ratePerDay"
+              type="text"
+              id="fname"
+              placeholder="Farm house"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-25">
+            <label for="subject">Description</label>
+          </div>
+          <div class="col-75">
+            <textarea name="description" id="demoCustomPalette"> </textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">Features</label>
+          </div>
+          <div class="col-75">
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Features
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">free wifi</a></li>
+                <li><a class="dropdown-item" href="#">free parking</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">food avaliablity</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <button
+            type="submit"
+            id="save"
+            name="add"
+            class="btn btn-success ms-auto waves-light buttonWidth btn-lg float-right"
+          >
+            Save
+          </button>
+          <!-- <button
+            type="submit"
+            id="save"
+            name="add"
+            class="btn btn-success ms-auto waves-light buttonWidth btn-lg float-right"
+          >
+            cancel
+          </button> -->
+          <!-- <div class="full-width">
+            <input class="inputSubmit" type="submit" value="Submit" />
+          </div> -->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

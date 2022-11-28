@@ -1,0 +1,150 @@
+<div
+  style="border-radius: 30px"
+  id="myTable_wrapper"
+  class="dataTables_wrapper no-footer container pt-5"
+>
+  <table
+    id="myTable"
+    class="table table-bordered table-striped dataTable no-footer"
+    role="grid"
+    aria-describedby="myTable_info"
+  >
+    <tbody id="booking_table">
+      <tr role="row" class="odd">
+        <td class="sorting_1">
+          <h2 style="font-weight: bold; color: gray">Booking Id</h2>
+        </td>
+        <td>
+          <h2 style="font-weight: bold; color: gray">username</h2>
+        </td>
+
+        <td>
+          <h2 style="font-weight: bold; color: gray">farmhouse</h2>
+        </td>
+        <!-- <td>Number of Persons: </br> Primary Guest Name & Details </br><a><div class="label label-table label-success">View More</div></a></td> -->
+        <td>
+          <h2 style="font-weight: bold; color: gray">Check in/checkout</h2>
+        </td>
+        <td>
+          <h2 style="font-weight: bold; color: gray">Amount</h2>
+        </td>
+        <td>
+          <h2 style="font-weight: bold; color: gray">payment status</h2>
+        </td>
+
+        <td>
+          <h2 style="font-weight: bold; color: gray">view</h2>
+        </td>
+        <td>
+          <h2 style="font-weight: bold; color: gray">edit</h2>
+        </td>
+        <td>
+          <h2 style="font-weight: bold; color: gray">Delete</h2>
+        </td>
+      </tr>
+
+      <tr role="row" class="odd">
+        <td class="sorting_1">
+          <a href="javascript:void(0)" class="link">FHBKD#8</a>
+        </td>
+        <td>Arjun</td>
+
+        <td>Sea Lagoon Health Resort</td>
+        <!-- <td>Number of Persons: </br> Primary Guest Name & Details </br><a><div class="label label-table label-success">View More</div></a></td> -->
+        <td>26-06-2019 - <br />27-06-2019</td>
+        <td>₹ 11000</td>
+        <td class="text-center">
+          <div class="label label-table label-success">Paid</div>
+        </td>
+        <td>
+          <button style="border: none" class="text-success">view</button>
+        </td>
+        <td><button style="border: none" class="text-warning">Edit</button></td>
+        <td>
+          <button style="border: none" class="text-danger">Delete</button>
+        </td>
+      </tr>
+      <tr role="row" class="even">
+        <td class="sorting_1">
+          <a href="javascript:void(0)" class="link">FHBKD#9</a>
+        </td>
+        <td>Arjun</td>
+
+        <td>Sea Lagoon Health Resort</td>
+        <!-- <td>Number of Persons: </br> Primary Guest Name & Details </br><a><div class="label label-table label-success">View More</div></a></td> -->
+        <td>26-06-2019 - <br />27-06-2019</td>
+        <td>₹ 9000</td>
+        <td class="text-center">
+          <div class="label label-table label-success">Paid</div>
+        </td>
+
+        <td>
+          <a href="booking_details.php?id=9"
+            ><button
+              type="button"
+              class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
+              data-toggle="tooltip"
+              data-original-title="View Details"
+            >
+              <i class="ti-eye" aria-hidden="true"></i></button
+          ></a>
+        </td>
+        <td>
+          <a href="booking.php?id=9&amp;flag=1"
+            ><button
+              type="button"
+              class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
+              data-toggle="tooltip"
+              data-original-title="Edit"
+            >
+              <i class="ti-pencil" aria-hidden="true"></i></button
+          ></a>
+        </td>
+        <td>
+          <a onclick="deletedata('9');"
+            ><button
+              type="button"
+              class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
+              data-toggle="tooltip"
+              data-original-title="Delete"
+            >
+              <i class="ti-close" aria-hidden="true"></i></button
+          ></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    class="dataTables_info"
+    id="myTable_info"
+    role="status"
+    aria-live="polite"
+  >
+    Showing 1 to 2 of 2 entries
+  </div>
+  <div class="dataTables_paginate paging_simple_numbers" id="myTable_paginate">
+    <a
+      class="paginate_button previous disabled"
+      aria-controls="myTable"
+      data-dt-idx="0"
+      tabindex="0"
+      id="myTable_previous"
+      >Previous</a
+    ><span
+      ><a
+        class="paginate_button current"
+        aria-controls="myTable"
+        data-dt-idx="1"
+        tabindex="0"
+        >1</a
+      ></span
+    ><a
+      class="paginate_button next disabled"
+      aria-controls="myTable"
+      data-dt-idx="2"
+      tabindex="0"
+      id="myTable_next"
+      >Next</a
+    >
+  </div>
+</div>
