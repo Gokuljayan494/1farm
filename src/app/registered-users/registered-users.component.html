@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="row m-2">
+    <div class="col-lg-6 farmTour">Farm House</div>
+    <div class="col-lg-6 ss">
+      <a class="btn btn-primary" href="addNewFarm" role="button">Add new </a>
+    </div>
+  </div>
+
+  <div
+    style="border-radius: 30px"
+    id="myTable_wrapper"
+    class="dataTables_wrapper no-footer container-fluid pt-5"
+  >
+    <table
+      id="myTable"
+      class="table table-bordered table-striped dataTable no-footer"
+      role="grid"
+      aria-describedby="myTable_info"
+    >
+      <tbody id="booking_table">
+        <tr role="row" class="odd">
+          <td class="sorting_1">
+            <h2 style="font-weight: bold; color: gray">User Name</h2>
+          </td>
+          <td>
+            <h2 style="font-weight: bold; color: gray">place</h2>
+          </td>
+
+          <td>
+            <h2 style="font-weight: bold; color: gray">mobile</h2>
+          </td>
+          <!-- <td>Number of Persons: </br> Primary Guest Name & Details </br><a><div class="label label-table label-success">View More</div></a></td> -->
+          <td>
+            <h2 style="font-weight: bold; color: gray">email</h2>
+          </td>
+        </tr>
+
+        <tr role="row" class="odd" *ngFor="let product of allProducts">
+          <td class="sorting_1">
+            <a href="javascript:void(0)" class="link">{{ product.name }}</a>
+          </td>
+          <td>{{ product.place }}</td>
+
+          <td>{{ product.mobile }}</td>
+          <!-- <td>Number of Persons: </br> Primary Guest Name & Details </br><a><div class="label label-table label-success">View More</div></a></td> -->
+          <td>{{ product.email }}</td>
+        </tr>
+        <!-- <tr role="row" class="odd">
+            <td class="sorting_1">
+              <a href="javascript:void(0)" class="link">#a1223</a>
+            </td>
+            <td>Misty valley</td>
+  
+            <td>1000</td>
+            <td>Number of Persons: </br> Primary Guest Name & Details </br><a><div class="label label-table label-success">View More</div></a></td>
+          <td></td>
+          <td></td>
+          <td class="text-center">
+            <div class="label label-table label-success"></div>
+          </td>
+          <td>
+            <button style="border: none" class="text-success">view</button>
+          </td>
+          <td>
+            <button style="border: none" class="text-warning">Edit</button>
+          </td>
+          <td>
+            <button style="border: none" class="text-danger">Delete</button>
+          </td> -->
+        <!-- </tr> -->
+        -->
+      </tbody>
+    </table>
+    <div
+      class="dataTables_info"
+      id="myTable_info"
+      role="status"
+      aria-live="polite"
+    >
+      Showing 1 to 2 of 2 entries
+    </div>
+    <div
+      class="dataTables_paginate paging_simple_numbers"
+      id="myTable_paginate"
+    >
+      <a
+        class="paginate_button previous disabled"
+        aria-controls="myTable"
+        data-dt-idx="0"
+        tabindex="0"
+        id="myTable_previous"
+        >Previous</a
+      ><span
+        ><a
+          class="paginate_button current"
+          aria-controls="myTable"
+          data-dt-idx="1"
+          tabindex="0"
+          >1</a
+        ></span
+      ><a
+        class="paginate_button next disabled"
+        aria-controls="myTable"
+        data-dt-idx="2"
+        tabindex="0"
+        id="myTable_next"
+        >Next</a
+      >
+    </div>
+  </div>
+</div>

@@ -23,6 +23,7 @@ import { FarmService } from './farm.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditTourComponent } from './edit-tour/edit-tour.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { RegisteredUsersComponent } from './registered-users/registered-users.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
     FarmTourComponent,
     EditTourComponent,
     LoginPageComponent,
+    RegisteredUsersComponent,
   ],
   imports: [
     BrowserModule,

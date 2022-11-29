@@ -32,8 +32,9 @@ export class productService {
       )
       .subscribe((data) => {
         console.log(data);
+
         alert(`new tour added`);
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('dashboard');
       });
   }
 
@@ -78,10 +79,14 @@ export class productService {
   onLogin(data: any) {
     console.log(`${(data.email, data.password)}`);
     let login = 'login';
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${data.token}`,
+    });
     this.http
       .post<any>(
         'https://farm-house-reubro.onrender.com/api/v1/admin/login ',
-        data
+        data,
+        { headers }
       )
       .subscribe((res) => {
         console.log(res);
@@ -94,5 +99,29 @@ export class productService {
         alert(`sucessfully logged in`);
         this.router.navigateByUrl('dashboard');
       });
+  }
+  fetchProduct1() {
+    return this.http
+      .get<{ [key: string]: products }>(
+        'https://farm-house-reubro.onrender.com/api/v1/users/getUsers'
+      )
+      .pipe(
+        map((res: any) => {
+          console.log(res[`data`]);
+          res = res[`users`];
+          const products = [];
+          for (const key in res) {
+            console.log(`--------------`);
+
+            console.log(key);
+
+            if (res.hasOwnProperty(key)) {
+              products.push({ ...res[key], _id: key });
+              console.log(products);
+            }
+          }
+          return products;
+        })
+      );
   }
 }

@@ -7,7 +7,7 @@ import { FarmTourComponent } from './farm-tour/farm-tour.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
-
+import { RegisteredUsersComponent } from '../app/registered-users/registered-users.component';
 const routes: Routes = [
   { path: '', redirectTo: 'loginPage', pathMatch: 'full' },
 
@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'farmTour', component: FarmTourComponent },
   { path: 'edit/:_id', component: EditTourComponent },
 
-  // { path: 'login', component: LoginComponent },
+  { path: 'RegisteredUsers', component: RegisteredUsersComponent },
   // {path:'dashboard',component:DashboardComponent },
 ];
 
