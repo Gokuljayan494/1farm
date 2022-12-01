@@ -24,6 +24,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditTourComponent } from './edit-tour/edit-tour.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisteredUsersComponent } from './registered-users/registered-users.component';
+import { ActivitiesComponent } from './activities/activities.component';
+import { FeaturesComponent } from './features/features.component';
+import { AddNewActivitiesComponent } from './add-new-activities/add-new-activities.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +40,9 @@ import { RegisteredUsersComponent } from './registered-users/registered-users.co
     EditTourComponent,
     LoginPageComponent,
     RegisteredUsersComponent,
+    ActivitiesComponent,
+    FeaturesComponent,
+    AddNewActivitiesComponent,
   ],
   imports: [
     BrowserModule,

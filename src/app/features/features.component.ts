@@ -1,19 +1,19 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FarmService } from '../farm.service';
 import { map } from 'rxjs/operators';
-import { products } from '../model/products';
+import { products11 } from '../model/activities';
 import { Router, RouterLink } from '@angular/router';
 import { productService } from '../service/productService';
 
 @Component({
-  selector: 'app-farm-tour',
-  templateUrl: './farm-tour.component.html',
-  styleUrls: ['./farm-tour.component.css'],
+  selector: 'app-features',
+  templateUrl: './features.component.html',
+  styleUrls: ['./features.component.css'],
 })
-export class FarmTourComponent implements OnInit {
+export class FeaturesComponent implements OnInit {
   products: any;
-  allProducts: products[] = [];
+  allProducts: products11[] = [];
   constructor(
     private farmService: FarmService,
     private http: HttpClient,
@@ -23,19 +23,16 @@ export class FarmTourComponent implements OnInit {
   delete() {}
 
   ngOnInit(): void {
-    // this.farmService.viewAllTour().subscribe((data) => {
-    //   console.log(data);
-    //   this.products = data;
-    // });
-    this.fetchProduct();
+    this.fetchProduct2();
   }
   onProductFetch() {
-    this.fetchProduct();
+    this.fetchProduct2();
   }
-  private fetchProduct() {
+  private fetchProduct2() {
     if (localStorage.getItem('token')) {
-      this.productService.fetchProduct().subscribe((products) => {
+      this.productService.fetchProduct2().subscribe((products) => {
         this.allProducts = products;
+        console.log(products);
       });
     } else {
       alert(`login first`);
@@ -43,8 +40,10 @@ export class FarmTourComponent implements OnInit {
   }
 
   onDeleteProduct(id: String) {
+    console.log(id);
+
     if (localStorage.getItem('token')) {
-      this.productService.deleteProduct(id);
+      this.productService.deleteFeatures(id);
       console.log(`id here ${id}`);
     } else {
       alert(`login first`);

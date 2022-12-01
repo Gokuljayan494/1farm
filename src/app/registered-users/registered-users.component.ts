@@ -20,8 +20,12 @@ export class RegisteredUsersComponent implements OnInit {
     this.fetchProduct1();
   }
   private fetchProduct1() {
-    this.service.fetchProduct1().subscribe((products) => {
-      this.allProducts = products;
-    });
+    if (localStorage.getItem('token')) {
+      this.service.fetchProduct1().subscribe((products) => {
+        this.allProducts = products;
+      });
+    } else {
+      alert(`login first`);
+    }
   }
 }

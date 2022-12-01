@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row m-2">
     <div class="col-lg-6 farmTour">Farm House</div>
-    <!-- <div class="col-lg-6 ss">
-      <a class="btn btn-primary" href="addNewFarm" role="button">Add new </a>
-    </div> -->
+    <div class="col-lg-6 ss">
+      <a class="btn btn-primary" href="addActivities" role="button">Add new </a>
+    </div>
   </div>
 
   <div
@@ -19,31 +19,57 @@
     >
       <tbody id="booking_table">
         <tr role="row" class="odd">
-          <td class="sorting_1">
-            <h2 style="font-weight: bold; color: gray">User Name</h2>
-          </td>
+          <!-- #id   Status Edit  -->
           <td>
-            <h2 style="font-weight: bold; color: gray">place</h2>
+            <h2 style="font-weight: bold; color: gray">Activity</h2>
           </td>
 
           <td>
-            <h2 style="font-weight: bold; color: gray">mobile</h2>
+            <h2 style="font-weight: bold; color: gray">Description</h2>
           </td>
           <!-- <td>Number of Persons: </br> Primary Guest Name & Details </br><a><div class="label label-table label-success">View More</div></a></td> -->
           <td>
-            <h2 style="font-weight: bold; color: gray">email</h2>
+            <h2 style="font-weight: bold; color: gray">Add. Cost</h2>
+          </td>
+
+          <td>
+            <h2 style="font-weight: bold; color: gray">Delete</h2>
           </td>
         </tr>
 
         <tr role="row" class="odd" *ngFor="let product of allProducts">
-          <td class="sorting_1">
-            <a href="javascript:void(0)" class="link">{{ product.name }}</a>
-          </td>
-          <td>{{ product.place }}</td>
+          <td>{{ product.name }}</td>
 
-          <td>{{ product.mobile }}</td>
+          <td>{{ product.description }}</td>
           <!-- <td>Number of Persons: </br> Primary Guest Name & Details </br><a><div class="label label-table label-success">View More</div></a></td> -->
-          <td>{{ product.email }}</td>
+          <td>{{ product.additionCost }}</td>
+          <!-- <td class="text-center">
+            <div class="label label-table label-success"></div>
+          </td> -->
+          <!-- <td>
+            <button type="button" class="btn btn-outline-success">View</button>
+          </td>
+          <td>
+            <a href="edit/:id">
+          <button style="border: none" class="text-warning">Edit</button>
+          <button class="btn btn-default">
+          <i class="glyphicon glyphicon-pencil"></i> Edit
+          </button>
+          </a>
+          </td>
+          -->
+          <td>
+            <!-- <button (click)="delete()" style="border: none" class="text-danger">
+                Delete
+              </button> -->
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="onDeleteProduct(product.id)"
+            >
+              Delete
+            </button>
+          </td>
         </tr>
         <!-- <tr role="row" class="odd">
             <td class="sorting_1">
@@ -77,7 +103,7 @@
       role="status"
       aria-live="polite"
     >
-      Showing 1 to 2 of 2 entries
+      Showing 1 to 1 entries
     </div>
     <div
       class="dataTables_paginate paging_simple_numbers"

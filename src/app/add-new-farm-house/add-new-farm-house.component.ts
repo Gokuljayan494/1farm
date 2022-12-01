@@ -33,9 +33,7 @@ export class AddNewFarmHouseComponent implements OnInit {
     private http: HttpClient,
     private productService: productService
   ) {}
-
   ngOnInit(): void {}
-
   onProductCreate(products: {
     name: String;
     images: String;
@@ -46,19 +44,23 @@ export class AddNewFarmHouseComponent implements OnInit {
     ratePerDay: String;
     description: String;
   }) {
-    if (
-      products.NoOfPersonsOccupy === '' ||
-      products.address === '' ||
-      products.description === '' ||
-      products.images === '' ||
-      products.name === '' ||
-      products.ownerEmail === '' ||
-      products.ownerPhone === '' ||
-      products.ratePerDay === ''
-    )
-      alert('enter the propertys correctly');
-    else {
-      this.productService.createProduct(products);
+    if (localStorage.getItem('token')) {
+      if (
+        products.NoOfPersonsOccupy === '' ||
+        products.address === '' ||
+        products.description === '' ||
+        products.images === '' ||
+        products.name === '' ||
+        products.ownerEmail === '' ||
+        products.ownerPhone === '' ||
+        products.ratePerDay === ''
+      )
+        alert('enter the propertys correctly');
+      else {
+        this.productService.createProduct(products);
+      }
+    } else {
+      alert(`login first`);
     }
     console.log(products);
   }

@@ -81,7 +81,7 @@ export class productService {
       )
       .subscribe((data) => {
         alert(`tour deleted`);
-        this.router.navigateByUrl('dashboard');
+        this.router.navigateByUrl('farmTour');
       });
   }
   onLogin(data: any) {
@@ -117,7 +117,7 @@ export class productService {
           alert('check admin email and password');
         }
         alert(`sucessfully logged in`);
-        this.router.navigateByUrl('dashboard');
+        this.router.navigateByUrl('farmTour');
       });
   }
   fetchProduct1() {
@@ -143,5 +143,75 @@ export class productService {
           return products;
         })
       );
+  }
+  fetchProduct2() {
+    return this.http
+      .get<{ [key: string]: products }>(
+        'https://farm-house-reubro.onrender.com/api/v1/admin/allActivities'
+      )
+      .pipe(
+        map((res: any) => {
+          console.log(res.activity);
+          res = res.activity;
+          const products = [];
+          for (const key in res) {
+            console.log(`--------------`);
+
+            console.log(key);
+
+            if (res.hasOwnProperty(key)) {
+              products.push({ ...res[key], _id: key });
+              console.log(products);
+            }
+          }
+          return products;
+        })
+      );
+  }
+  deleteFeatures(id: String) {
+    this.http
+      .delete(
+        'https://farm-house-reubro.onrender.com/api/v1/admin/deleteActivity/' +
+          id +
+          ''
+      )
+      .subscribe((data) => {
+        alert(`tour deleted`);
+        this.router.navigateByUrl('farmTour');
+      });
+  }
+  // deleteProduct(id: String) {
+  //   this.http
+  //     .delete(
+  //       'https://farm-house-reubro.onrender.com/api/v1/admin/deleteTour/' +
+  //         id +
+  //         ''
+  //     )
+  //     .subscribe((data) => {
+  //       alert(`tour deleted`);
+  //       this.router.navigateByUrl('farmTour');
+  //     });
+  // }
+
+  createProduct1(products: {
+    name: String;
+    photo: String;
+    description: String;
+    additionCost: String;
+  }) {
+    const headers = new HttpHeaders({ myHeader: 'reubro' });
+
+    this.http
+      .post(
+        `https://farm-house-reubro.onrender.com/api/v1/admin/addActivity`,
+        products,
+        { headers }
+      )
+      .subscribe((data) => {
+        console.log(data);
+
+        alert(`new activity added`);
+        this.router.navigateByUrl('farmTour');
+      });
   }
 }

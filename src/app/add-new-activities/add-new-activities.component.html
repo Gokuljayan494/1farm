@@ -1,0 +1,125 @@
+<div class="container p-3">
+  <div class="first p-3">
+    <h1>farm House</h1>
+    <h3 class="card-subtitle">Add new Activities</h3>
+    <div class="container second">
+      <form
+        #productForm="ngForm"
+        (ngSubmit)="onProductCreate(productForm.value)"
+      >
+        <div class="row">
+          <div class="col-25">
+            <label form for="fname"> Name</label>
+          </div>
+          <div class="col-75">
+            <input
+              type="text"
+              id="fname"
+              name="name"
+              placeholder="Farm house"
+              ngModel
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">Photo</div>
+          <div class="col-75">
+            <div class="col-95">
+              <div class="custom-file col-75 photoUpload">
+                <input
+                  formControlName="photo"
+                  ngModel
+                  name="photo"
+                  type="file"
+                  id="inputGroupFile01"
+                  aria-describedby="inputGroupFileAddon01"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-25">
+              <label for="fname"> UserName</label>
+            </div>
+            <div class="col-75">
+              <input
+                formControlName="UserName"
+                type="text"
+                id="fname"
+                name="user"
+                placeholder="UserName"
+              />
+            </div>
+          </div> -->
+        <!-- <div class="row">
+            <div class="col-25">
+              <label for="fname">Password</label>
+            </div>
+            <div class="col-75">
+              <input
+                name="password"
+                formControlName="Password"
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="******"
+              />
+            </div>
+          </div> -->
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">AdditionCost:</label>
+          </div>
+          <div class="col-75">
+            <input
+              ngModel
+              class="form-control"
+              type="number"
+              id="fname"
+              name="additionCost"
+              placeholder="10"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-25">
+            <label for="fname"> description</label>
+          </div>
+          <div class="col-75">
+            <input
+              ngModel
+              name="description"
+              type="text"
+              id="fname"
+              placeholder=""
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <button
+            type="submit"
+            id="save"
+            name="add"
+            class="btn btn-success ms-auto waves-light buttonWidth btn-lg float-right"
+          >
+            Save
+          </button>
+          <!-- <button
+              type="submit"
+              id="save"
+              name="add"
+              class="btn btn-success ms-auto waves-light buttonWidth btn-lg float-right"
+            >
+              cancel
+            </button> -->
+          <!-- <div class="full-width">
+              <input class="inputSubmit" type="submit" value="Submit" />
+            </div> -->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

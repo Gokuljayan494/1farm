@@ -8,9 +8,9 @@
   <a mat-list-item routerLinkActive="list-item-active" routerLink="/main">
     <mat-icon>home</mat-icon> Home
   </a>
-  <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
+  <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
     <mat-icon>Bookings</mat-icon> Bookings
-  </a>
+  </a> -->
   <a routerLink="/farmTour" mat-list-item>
     <mat-icon>edit</mat-icon> Farm House
   </a>
@@ -24,6 +24,12 @@
     >
   </li> -->
   <a mat-list-item routerLink="/RegisteredUsers">
-    <mat-icon>Registered Users</mat-icon>Registered Users
+    <mat-icon>Registered</mat-icon>Registered Users
   </a>
+  <a mat-list-item routerLink="/features"> <mat-icon></mat-icon>Activities </a>
+  <a (click)="logout()" mat-list-item routerLink="/Logout">
+    <mat-icon></mat-icon>Logout</a
+  >
+
+  <!-- features -->
 </mat-nav-list>

@@ -8,6 +8,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { RegisteredUsersComponent } from '../app/registered-users/registered-users.component';
+import { FeaturesComponent } from './features/features.component';
+import { AddNewActivitiesComponent } from './add-new-activities/add-new-activities.component';
 const routes: Routes = [
   { path: '', redirectTo: 'loginPage', pathMatch: 'full' },
 
@@ -17,7 +19,10 @@ const routes: Routes = [
   { path: 'loginPage', component: LoginPageComponent },
   { path: 'farmTour', component: FarmTourComponent },
   { path: 'edit/:_id', component: EditTourComponent },
+  { path: 'features', component: FeaturesComponent },
+  { path: 'addActivities', component: AddNewActivitiesComponent },
 
+  //
   { path: 'RegisteredUsers', component: RegisteredUsersComponent },
   // {path:'dashboard',component:DashboardComponent },
 ];
